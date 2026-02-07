@@ -271,7 +271,18 @@ function updateLanguage() {
 
             const detailBtnText = document.getElementById('detail-btn-text');
             if (detailBtnText) {
-                if (item.type === 'service') {
+                // Determine type by looking up parent category if needed, or check hardcoded ID
+                let isService = false;
+                if (item.type === 'service') isService = true;
+                else {
+                    // Check parent category type if not on item
+                    const parentCat = findCategoryOfItem(item.id);
+                    if (parentCat && parentCat.type === 'service') isService = true;
+                }
+
+                if (item.id === 'consult_online') {
+                    detailBtnText.textContent = currentLang === 'en' ? 'Book Consultation' : 'পরামর্শ বুক করুন';
+                } else if (isService) {
                     detailBtnText.textContent = currentLang === 'en' ? 'Hire Now' : 'হায়ার করুন';
                 } else {
                     detailBtnText.textContent = currentLang === 'en' ? 'Add to Cart' : 'কার্টে যোগ করুন';
@@ -320,6 +331,20 @@ function toggleCart() {
 }
 
 
+
+// Helper to find parent category of an item
+function findCategoryOfItem(itemId) {
+    if (!appData.categories) return null;
+    for (const cat of appData.categories) {
+        if (cat.items && cat.items.find(i => i.id === itemId)) return cat;
+        if (cat.subcategories) {
+            for (const sub of cat.subcategories) {
+                if (sub.items && sub.items.find(i => i.id === itemId)) return cat;
+            }
+        }
+    }
+    return null;
+}
 
 function removeFromCart(id) {
     cart = cart.filter(item => item.id !== id);
@@ -469,8 +494,8 @@ async function submitOrder(event) {
 
 
 
-// Update addToCart to accept model and brand
-function addToCart(id, nameEn, nameBn, price, quantity = 1, modelEn = null, modelBn = null, brandEn = null, brandBn = null) {
+// Update addToCart to accept model and brand and direct checkout flag
+function addToCart(id, nameEn, nameBn, price, quantity = 1, modelEn = null, modelBn = null, brandEn = null, brandBn = null, isDirectCheckout = false) {
     const existing = cart.find(item => item.id === id);
     if (existing) {
         existing.quantity += quantity;
@@ -489,14 +514,24 @@ function addToCart(id, nameEn, nameBn, price, quantity = 1, modelEn = null, mode
 
         // Add brand if provided
         if (brandEn || brandBn) {
-            cartItem.brand = { en: brandEn || brandBn, bn: brandBn || brandEn };
+            cartItem.brand = { en: brandEn || brandBn, bn: brandBn || modelEn };
         }
 
         cart.push(cartItem);
     }
     saveCart();
     updateCartUI();
-    toggleCart(); // Open cart to show feedback
+
+    if (isDirectCheckout) {
+        const modal = document.getElementById('checkout-modal');
+        if (modal) {
+            modal.classList.add('open');
+            // Ensure cart sidebar is closed
+            document.getElementById('cart-sidebar').classList.remove('open');
+        }
+    } else {
+        toggleCart(); // Open cart to show feedback
+    }
 }
 
 // Global event listener for Add to Cart buttons
@@ -516,7 +551,10 @@ document.addEventListener('click', (e) => {
         const brandBn = btn.dataset.brandBn || null;
 
         if (id && nameEn && price) {
-            addToCart(id, nameEn, nameBn || nameEn, price, 1, modelEn, modelBn, brandEn, brandBn);
+            const isDirectCheckout = btn.dataset.directCheckout === "true";
+
+            // Pass direct checkout flag
+            addToCart(id, nameEn, nameBn || nameEn, price, 1, modelEn, modelBn, brandEn, brandBn, isDirectCheckout);
         } else {
             console.error('Missing data attributes on add-to-cart button', btn);
         }
@@ -661,8 +699,11 @@ function renderProductCard(item) {
                     data-id="${item.id}"
                     data-name-en="${item.name.en}"
                     data-name-bn="${item.name.bn}"
-                    data-price="${item.price}">
-                    ${currentLang === 'en' ? 'Hire Now' : 'হায়ার করুন'}
+                    data-price="${item.price}"
+                    ${item.id === 'consult_online' ? 'data-direct-checkout="true"' : ''}>
+                    ${item.id === 'consult_online'
+                ? (currentLang === 'en' ? 'Book Consultation' : 'পরামর্শ বুক করুন')
+                : (currentLang === 'en' ? 'Hire Now' : 'হায়ার করুন')}
                 </button>
             </div>
         </a>`;
@@ -745,4 +786,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, 1000);
+
+    // Hero Slideshow Logic
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 0) {
+        let currentSlide = 0;
+        setInterval(() => {
+            // Remove active class from current
+            slides[currentSlide].classList.remove('active');
+
+            // Move to next
+            currentSlide = (currentSlide + 1) % slides.length;
+
+            // Add active class to next
+            slides[currentSlide].classList.add('active');
+        }, 3000); // 3 seconds total (2s hold + 1s transition provided by CSS)
+    }
 });

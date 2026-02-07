@@ -48,8 +48,14 @@
                 </div>
                 <p class="price">৳{{ item.price }} {% if item.unit %}/ {{ item.unit }}{% endif %}</p>
                 <button class="add-to-cart-btn hire-btn" data-id="{{ item.id }}" data-name-en="{{ item.name.en }}"
-                    data-name-bn="{{ item.name.bn }}" data-price="{{ item.price }}"
-                    data-key="settings.cart_labels.hire">Hire Now</button>
+                    data-name-bn="{{ item.name.bn }}" data-price="{{ item.price }}" {% if item.id=='consult_online'
+                    %}data-direct-checkout="true" {% endif %} data-key="settings.cart_labels.hire">
+                    {% if item.id == 'consult_online' %}
+                    Book Consultation
+                    {% else %}
+                    Hire Now
+                    {% endif %}
+                </button>
             </div>
         </a>
         {% else %}

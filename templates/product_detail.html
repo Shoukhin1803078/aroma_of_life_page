@@ -96,10 +96,17 @@
                         data-name-bn="{{ product.name.bn }}" data-price="{{ product.price }}" {% if product.model_name
                         %}data-model-en="{{ product.model_name.en }}" data-model-bn="{{ product.model_name.bn }}" {%
                         endif %} {% if product.brand %}data-brand-en="{{ product.brand.en }}"
-                        data-brand-bn="{{ product.brand.bn }}" {% endif %}
-                        style="padding: 1rem 2rem; font-size: 1.1rem;">
-                        <span id="detail-btn-text">{% if product.type == 'service' %}Hire Now{% else %}Add to Cart{%
-                            endif %}</span>
+                        data-brand-bn="{{ product.brand.bn }}" {% endif %} {% if product.id=='consult_online'
+                        %}data-direct-checkout="true" {% endif %} style="padding: 1rem 2rem; font-size: 1.1rem;">
+                        <span id="detail-btn-text">
+                            {% if product.id == 'consult_online' %}
+                            {{ 'Book Consultation' if current_lang == 'en' else 'পরামর্শ বুক করুন' }}
+                            {% elif product.type == 'service' %}
+                            {{ 'Hire Now' if current_lang == 'en' else 'হায়ার করুন' }}
+                            {% else %}
+                            {{ 'Add to Cart' if current_lang == 'en' else 'কার্টে যোগ করুন' }}
+                            {% endif %}
+                        </span>
                     </button>
                 </div>
 

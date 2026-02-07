@@ -1,0 +1,446 @@
+{
+    "settings": {
+        "title": {
+            "en": "Aroma of Life",
+            "bn": "অ্যারোমা অফ লাইফ"
+        },
+        "nav": {
+            "home": {
+                "en": "Home",
+                "bn": "হোম"
+            },
+            "beauty": {
+                "en": "Beauty",
+                "bn": "সৌন্দর্য"
+            },
+            "eyecare": {
+                "en": "Eye Care",
+                "bn": "চোখের যত্ন"
+            },
+            "handmade": {
+                "en": "Handmade Beauty",
+                "bn": "হস্তনির্মিত সৌন্দর্য"
+            },
+            "patientservice": {
+                "en": "Patient Service",
+                "bn": "রোগী সেবা"
+            },
+            "artcraft": {
+                "en": "Art & Craft",
+                "bn": "শিল্প ও কারুশিল্প"
+            },
+            "homedecor": {
+                "en": "Home Decor",
+                "bn": "ঘর সাজানো"
+            },
+            "cart": {
+                "en": "Cart",
+                "bn": "কার্ট"
+            },
+            "back": {
+                "en": "Back",
+                "bn": "পেছনে"
+            },
+            "collections": {
+                "en": "Collections",
+                "bn": "সংগ্রহ"
+            }
+        },
+        "cart_labels": {
+            "add_to_cart": {
+                "en": "Add to Cart",
+                "bn": "কার্টে যোগ করুন"
+            },
+            "hire": {
+                "en": "Book Now",
+                "bn": "বুক করুন"
+            },
+            "remove": {
+                "en": "Remove",
+                "bn": "সরান"
+            },
+            "total": {
+                "en": "Total",
+                "bn": "মোট"
+            },
+            "checkout": {
+                "en": "Checkout",
+                "bn": "চেকআউট"
+            },
+            "price": {
+                "en": "Price",
+                "bn": "দাম"
+            },
+            "experience": {
+                "en": "Experience",
+                "bn": "অভিজ্ঞতা"
+            },
+            "rating": {
+                "en": "Rating",
+                "bn": "রেটিং"
+            }
+        }
+    },
+    "categories": [
+        {
+            "id": "beauty",
+            "name": {
+                "en": "Beauty",
+                "bn": "সৌন্দর্য"
+            },
+            "image": "images/beauty/skincare/soap.jpg",
+            "subcategories": [
+                {
+                    "id": "skincare",
+                    "name": {
+                        "en": "Natural Skincare",
+                        "bn": "প্রাকৃতিক স্কিনকেয়ার"
+                    },
+                    "items": [
+                        {
+                            "id": "chem_free_soap",
+                            "name": {
+                                "en": "Chemical Free Soap",
+                                "bn": "রাসায়নিক মুক্ত সাবান"
+                            },
+                            "price": 450,
+                            "original_price": 500,
+                            "rating": 4.9,
+                            "reviews_count": 45,
+                            "brand": {
+                                "en": "Aroma Naturals",
+                                "bn": "অ্যারোমা ন্যাচারালস"
+                            },
+                            "delivery_time": {
+                                "en": "3 Days",
+                                "bn": "৩ দিন"
+                            },
+                            "short_description": {
+                                "en": "Handmade herbal soap for glowing skin.",
+                                "bn": "চমকপ্রদ ত্বকের জন্য হাতে তৈরি ভেষজ সাবান।"
+                            },
+                            "image": "images/beauty/skincare/soap.jpg",
+                            "url": "/category/skincare/product/chem_free_soap",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Handmade herbal soap crafted with natural oils and herbs.</p><h3>Key Features</h3><ul><li>Chemical-free</li><li>Moisturizing</li><li>Natural fragrance</li></ul>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>প্রাকৃতিক তেল এবং ভেষজ দিয়ে তৈরি হাতে তৈরি ভেষজ সাবান।</p><h3>মূল বৈশিষ্ট্য</h3><ul><li>রাসায়নিক মুক্ত</li><li>মশ্চারাইজিং</li><li>প্রাকৃতিক সুবাস</li></ul>"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "haircare",
+                    "name": {
+                        "en": "Herbal Haircare",
+                        "bn": "ভেষজ হেয়ারকেয়ার"
+                    },
+                    "items": [
+                        {
+                            "id": "herbal_oil",
+                            "name": {
+                                "en": "Herbal Hair Oil",
+                                "bn": "ভেষজ চুলের তেল"
+                            },
+                            "price": 850,
+                            "original_price": 950,
+                            "rating": 4.8,
+                            "reviews_count": 120,
+                            "brand": {
+                                "en": "Nature's Lock",
+                                "bn": "নেচারস লক"
+                            },
+                            "delivery_time": {
+                                "en": "2 Days",
+                                "bn": "২ দিন"
+                            },
+                            "short_description": {
+                                "en": "Promotes hair growth and reduces fall.",
+                                "bn": "চুল বৃদ্ধি করে এবং ঝরা কমায়।"
+                            },
+                            "image": "images/beauty/haircare/oil.jpg",
+                            "url": "/category/haircare/product/herbal_oil",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Infused with rare herbs to strengthen hair roots.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>চুলের গোড়া শক্ত করতে বিরল ভেষজ দিয়ে তৈরি।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "eyecare",
+            "name": {
+                "en": "Eye Care",
+                "bn": "চোখের যত্ন"
+            },
+            "image": "images/eyecare/drops/eyewash.jpg",
+            "subcategories": [
+                {
+                    "id": "drops",
+                    "name": {
+                        "en": "Eye Drops & Wash",
+                        "bn": "আই ড্রপস এবং ওয়াশ"
+                    },
+                    "items": [
+                        {
+                            "id": "rose_water_drops",
+                            "name": {
+                                "en": "Herbal Eye Wash",
+                                "bn": "ভেষজ আই ওয়াশ"
+                            },
+                            "price": 300,
+                            "rating": 4.7,
+                            "reviews_count": 60,
+                            "brand": {
+                                "en": "Vision Pure",
+                                "bn": "ভিশন পিওর"
+                            },
+                            "delivery_time": {
+                                "en": "2 Days",
+                                "bn": "২ দিন"
+                            },
+                            "short_description": {
+                                "en": "Soothing eye wash for tired eyes.",
+                                "bn": "ক্লান্ত চোখের জন্য আরামদায়ক আই ওয়াশ।"
+                            },
+                            "image": "images/eyecare/drops/eyewash.jpg",
+                            "url": "/category/drops/product/rose_water_drops",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Natural rose water base to soothe irritation.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>জ্বালা পোড়া কমাতে প্রাকৃতিক গোলাপ জল বেস।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "handmade",
+            "name": {
+                "en": "Handmade Beauty",
+                "bn": "হস্তনির্মিত সৌন্দর্য"
+            },
+            "image": "images/handmade/jewelry/pendant.jpg",
+            "subcategories": [
+                {
+                    "id": "jewelry",
+                    "name": {
+                        "en": "Nature Jewelry",
+                        "bn": "প্রাকৃতিক গয়না"
+                    },
+                    "items": [
+                        {
+                            "id": "flower_pendant",
+                            "name": {
+                                "en": "Resin Flower Pendant",
+                                "bn": "রেজিন ফ্লাওয়ার পেন্ডেন্ট"
+                            },
+                            "price": 1200,
+                            "rating": 5.0,
+                            "reviews_count": 15,
+                            "brand": {
+                                "en": "Artisan Soul",
+                                "bn": "আর্টিজান সোল"
+                            },
+                            "delivery_time": {
+                                "en": "5 Days",
+                                "bn": "৫ দিন"
+                            },
+                            "short_description": {
+                                "en": "Real dried flowers preserved in resin.",
+                                "bn": "রেজিনে সংরক্ষিত আসল শুকনো ফুল।"
+                            },
+                            "image": "images/handmade/jewelry/pendant.jpg",
+                            "url": "/category/jewelry/product/flower_pendant",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Unique handmade pendant with real flowers.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>আসল ফুল সহ অনন্য হাতে তৈরি পেন্ডেন্ট।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "patientservice",
+            "name": {
+                "en": "Eye Patient Service",
+                "bn": "চক্ষু রোগী সেবা"
+            },
+            "type": "service",
+            "image": "images/patientservice/consult/doctor.jpg",
+            "subcategories": [
+                {
+                    "id": "consultation",
+                    "name": {
+                        "en": "Consultation",
+                        "bn": "পরামর্শ"
+                    },
+                    "items": [
+                        {
+                            "id": "consult_online",
+                            "name": {
+                                "en": "Online Consultation",
+                                "bn": "অনলাইন পরামর্শ"
+                            },
+                            "price": 1000,
+                            "unit": "per session",
+                            "rating": 4.9,
+                            "reviews_count": 200,
+                            "brand": {
+                                "en": "Aroma Vision",
+                                "bn": "অ্যারোমা ভিশন"
+                            },
+                            "delivery_time": {
+                                "en": "Instant Booking",
+                                "bn": "তাৎক্ষণিক বুকিং"
+                            },
+                            "short_description": {
+                                "en": "Video consultation with expert Ophthalmologist.",
+                                "bn": "বিশেষজ্ঞ চক্ষু বিশেষজ্ঞের সাথে ভিডিও পরামর্শ।"
+                            },
+                            "image": "images/patientservice/consult/doctor.jpg",
+                            "url": "/category/consultation/product/consult_online",
+                            "long_description": {
+                                "en": "<h3>Service Details</h3><p>Get expert advice for your eye health from the comfort of your home.</p>",
+                                "bn": "<h3>সেবার বিবরণ</h3><p>আপনার ঘরের স্বাচ্ছন্দ্য থেকে চোখের স্বাস্থ্যের জন্য বিশেষজ্ঞ পরামর্শ পান।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "artcraft",
+            "name": {
+                "en": "Art & Craft",
+                "bn": "শিল্প ও কারুশিল্প"
+            },
+            "image": "images/art/paintings/landscape.jpg",
+            "subcategories": [
+                {
+                    "id": "paintings",
+                    "name": {
+                        "en": "Wall Art",
+                        "bn": "ওয়াল আর্ট"
+                    },
+                    "items": [
+                        {
+                            "id": "nature_painting",
+                            "name": {
+                                "en": "Nature Landscape",
+                                "bn": "প্রাকৃতিক দৃশ্য"
+                            },
+                            "price": 5000,
+                            "rating": 5.0,
+                            "reviews_count": 8,
+                            "brand": {
+                                "en": "Aroma Art",
+                                "bn": "অ্যারোমা আর্ট"
+                            },
+                            "delivery_time": {
+                                "en": "7 Days",
+                                "bn": "৭ দিন"
+                            },
+                            "short_description": {
+                                "en": "Hand-painted landscape on canvas.",
+                                "bn": "ক্যানভাসে হাতে আঁকা প্রাকৃতিক দৃশ্য।"
+                            },
+                            "image": "images/art/paintings/landscape.jpg",
+                            "url": "/category/paintings/product/nature_painting",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Acrylic on canvas, dimensions 24x36 inches.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>অ্যাক্রিলিক অন ক্যানভাস, আকার ২৪x৩৬ ইঞ্চি।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "homedecor",
+            "name": {
+                "en": "Home Decoration",
+                "bn": "ঘর সাজানো"
+            },
+            "image": "images/homedecor/plants/snake_plant.jpg",
+            "subcategories": [
+                {
+                    "id": "plants",
+                    "name": {
+                        "en": "Indoor Plants",
+                        "bn": "ইনডোর প্ল্যান্টস"
+                    },
+                    "items": [
+                        {
+                            "id": "snake_plant",
+                            "name": {
+                                "en": "Snake Plant",
+                                "bn": "স্নেক প্ল্যান্ট"
+                            },
+                            "price": 600,
+                            "rating": 4.8,
+                            "reviews_count": 55,
+                            "brand": {
+                                "en": "Green Life",
+                                "bn": "গ্রিন লাইফ"
+                            },
+                            "delivery_time": {
+                                "en": "2 Days",
+                                "bn": "২ দিন"
+                            },
+                            "short_description": {
+                                "en": "Air purifying indoor plant, low maintenance.",
+                                "bn": "বায়ু বিশুদ্ধকারী ইনডোর প্ল্যান্ট, কম যত্ন প্রয়োজন।"
+                            },
+                            "image": "images/homedecor/plants/snake_plant.jpg",
+                            "url": "/category/plants/product/snake_plant",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Perfect for beginners, thrives in low light.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>নতুনদের জন্য উপযুক্ত, কম আলোতে ভালো থাকে।</p>"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "id": "gardening",
+                    "name": {
+                        "en": "Gardening Tools",
+                        "bn": "বাগানের সরঞ্জাম"
+                    },
+                    "items": [
+                        {
+                            "id": "tool_set",
+                            "name": {
+                                "en": "Basic Tool Set",
+                                "bn": "মৌলিক টুল সেট"
+                            },
+                            "price": 1200,
+                            "rating": 4.6,
+                            "reviews_count": 30,
+                            "brand": {
+                                "en": "Garden Pro",
+                                "bn": "গার্ডেন প্রো"
+                            },
+                            "delivery_time": {
+                                "en": "3 Days",
+                                "bn": "৩ দিন"
+                            },
+                            "short_description": {
+                                "en": "Essential tools for home gardening.",
+                                "bn": "বাড়ির বাগানের জন্য প্রয়োজনীয় সরঞ্জাম।"
+                            },
+                            "image": "images/homedecor/gardening/toolset.jpg",
+                            "url": "/category/gardening/product/tool_set",
+                            "long_description": {
+                                "en": "<h3>Product Details</h3><p>Includes trowel, fork, and shears.</p>",
+                                "bn": "<h3>পণ্যের বিবরণ</h3><p>শাবল, ফর্ক এবং কাঁচি অন্তর্ভুক্ত।</p>"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

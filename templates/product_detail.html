@@ -2,6 +2,13 @@
 
 {% block content %}
 <div class="container" style="padding-top: 2rem; padding-bottom: 4rem;">
+    <!-- Quick Links -->
+    <div class="category-quick-links" style="margin-bottom: 2rem; justify-content: start;">
+        {% for cat in data.categories %}
+        <a href="/category/{{ cat.id }}" class="quick-btn" data-key="categories.{{ loop.index0 }}.name">{{ cat.name.en
+            }}</a>
+        {% endfor %}
+    </div>
     <div class="product-detail-container"
         style="background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden;">
         <div class="product-detail-grid"

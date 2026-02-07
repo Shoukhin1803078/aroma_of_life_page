@@ -1,33 +1,137 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="hero">
-    <h1>Aroma of Life</h1>
-    <p>Nature's Touch for Beauty, Wellness, and Art</p>
-    <a href="#featured" class="cta-button">Explore Collection</a>
-</div>
-
-<div class="container">
-    <h2 style="text-align: center; margin-bottom: 2rem; color: var(--dark);">Our Collections</h2>
-    <div class="product-grid">
-        {% for category in data.categories %}
-        <a href="/category/{{ category.id }}" class="subcategory-card product-card">
-            <div class="product-image">
-                {% if category.image %}
-                <img src="/static/{{ category.image }}" alt="{{ category.name.en }}" class="card-img">
-                {% else %}
-                <span class="img-placeholder">{{ category.name.en[0] }}</span>
-                {% endif %}
-            </div>
-            <div class="product-info">
-                <h3 class="item-name" data-key="categories.{{ loop.index0 }}.name">{{ category.name.en }}</h3>
-                <p style="font-size: 0.9rem; color: #666;">
-                    <span class="collection-count">{{ category.subcategories|length }}</span>
-                    <span data-key="settings.nav.collections">Collections</span>
-                </p>
-            </div>
-        </a>
-        {% endfor %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="hero-content">
+        <h1 class="hero-title hidden-on-scroll">Nature Meets Vision</h1>
+        <p class="hero-subtitle hidden-on-scroll delay-100">Curating beauty, wellness, and clarity for your life.</p>
+        <p class="hero-description hidden-on-scroll delay-200">
+            Experience the harmony of professional eye care and nature-inspired artistry.
+            From handcrafted jewelry to holistic living, explore our world.
+        </p>
+        <div class="hidden-on-scroll delay-300">
+            <a href="#featured-collections" class="btn-primary">Explore Collections</a>
+        </div>
+    </div>
+    <div class="hero-image-placeholder hidden-on-scroll delay-400">
+        <!-- Abstract Nature Graphic or Icon can go here via CSS -->
+        <div class="hero-circle"></div>
     </div>
 </div>
+
+<!-- Quick Links (Moved from Base) -->
+<div class="category-quick-links hidden-on-scroll delay-300">
+    {% for category in data.categories %}
+    <a href="/category/{{ category.id }}" class="quick-btn" data-key="categories.{{ loop.index0 }}.name">{{
+        category.name.en }}</a>
+    {% endfor %}
+</div>
+
+<!-- Identity / Intro Section -->
+<section class="identity-section">
+    <div class="container">
+        <div class="identity-grid">
+            <div class="identity-card profession hidden-left">
+                <div class="icon-box">👁️</div>
+                <h3>Consultant Ophthalmologist</h3>
+                <p>Dedicated to preserving your vision with professional care and compassion.</p>
+                <a href="/category/eyecare" class="text-link">Book Consultation &rarr;</a>
+            </div>
+            <div class="identity-card passion hidden-right delay-200">
+                <div class="icon-box">🌿</div>
+                <h3>Nature Enthusiast</h3>
+                <p>Celebrating the art of living with handmade beauty, gardening, and decor.</p>
+                <a href="#featured-collections" class="text-link">Discover My Passion &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Collections -->
+<div id="featured-collections" class="container">
+    <h2 class="section-heading hidden-on-scroll">Curated For You</h2>
+
+    <!-- Handmade Accessories -->
+    <section class="featured-category handmade-theme hidden-slide-big">
+        <div class="category-content hidden-left">
+            <span class="category-tag">Handmade with Love</span>
+            <h2>Accessories & Jewelry</h2>
+            <p>Unique, skin-friendly pieces crafted from nature's own materials.</p>
+            <ul class="feature-list">
+                <li>Nature-inspired designs</li>
+                <li>Skin-friendly materials</li>
+                <li>Custom options</li>
+            </ul>
+            <a href="/category/handmade" class="btn-outline">View Collection</a>
+        </div>
+        <div class="category-visual hidden-zoom">
+            <div class="visual-card" style="background-image: url('/static/images/handmade/jewelry/pendant.jpg');">
+            </div>
+        </div>
+    </section>
+
+    <!-- Health & Self Care -->
+    <section class="featured-category beauty-theme reverse hidden-slide-big delay-200">
+        <div class="category-content hidden-right">
+            <span class="category-tag">Natural Radiance</span>
+            <h2>Health & Self-Care</h2>
+            <p>Embrace homemade beauty routines and chemical-free living.</p>
+            <ul class="feature-list">
+                <li>Natural Skincare</li>
+                <li>Herbal Haircare</li>
+                <li>Wellness Guides</li>
+            </ul>
+            <a href="/category/beauty" class="btn-outline">Shop Natural Beauty</a>
+        </div>
+        <div class="category-visual hidden-zoom">
+            <div class="visual-card" style="background-image: url('/static/images/beauty/skincare/soap.jpg');"></div>
+        </div>
+    </section>
+
+    <!-- Home & Garden -->
+    <section class="featured-category home-theme hidden-slide-big">
+        <div class="category-content hidden-left">
+            <span class="category-tag">Sanctuary</span>
+            <h2>Home Decoration</h2>
+            <p>Transform your space into a green haven with our decor ideas and plants.</p>
+            <ul class="feature-list">
+                <li>Indoor Plants</li>
+                <li>Gardening Tools</li>
+                <li>Creative Decor</li>
+            </ul>
+            <a href="/category/homedecor" class="btn-outline">Green Your Home</a>
+        </div>
+        <div class="category-visual hidden-zoom">
+            <div class="visual-card" style="background-image: url('/static/images/homedecor/plants/snake_plant.jpg');">
+            </div>
+        </div>
+    </section>
+
+    <!-- Art & Craft -->
+    <section class="featured-category art-theme reverse hidden-slide-big delay-200">
+        <div class="category-content hidden-right">
+            <span class="category-tag">Creative Soul</span>
+            <h2>Art & Craft</h2>
+            <p>Expressions of beauty through painting and handmade crafts.</p>
+            <a href="/category/artcraft" class="btn-outline">View Gallery</a>
+        </div>
+        <div class="category-visual hidden-zoom">
+            <div class="visual-card" style="background-image: url('/static/images/art/paintings/landscape.jpg');"></div>
+        </div>
+    </section>
+</div>
+
+<!-- Patient Service Call to Action -->
+<section class="cta-section eyecare-bg hidden-on-scroll">
+    <div class="container">
+        <h2>Expert Eye Care Services</h2>
+        <p>BNSB Eye Hospital Consultant available for your vision needs.</p>
+        <div class="cta-buttons">
+            <a href="/category/patientservice" class="btn-white">Book Appointment</a>
+            <a href="/category/eyecare" class="btn-transparent">View Eye Care Products</a>
+        </div>
+    </div>
+</section>
+
 {% endblock %}

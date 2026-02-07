@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aroma of Life</title>
-    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/style.css?v=4">
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Outfit:wght@300;400;600&display=swap"
         rel="stylesheet">
@@ -79,13 +79,6 @@
                 </div>
             </div>
 
-            <div class="category-quick-links">
-                {% for category in data.categories %}
-                <a href="/category/{{ category.id }}" class="quick-btn" data-key="categories.{{ loop.index0 }}.name">{{
-                    category.name.en }}</a>
-                {% endfor %}
-            </div>
-
             <main>
                 {% block content %}{% endblock %}
             </main>
@@ -144,7 +137,7 @@
         </div>
     </div>
 
-    <script src="/static/js/script.js?v=2"></script>
+    <script src="/static/js/script.js?v=3"></script>
 </body>
 
 </html>

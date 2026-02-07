@@ -4,6 +4,14 @@
 <div class="container">
     <h2 class="category-title" id="page-title">{{ category.name.en }}</h2>
 
+    <!-- Quick Links -->
+    <div class="category-quick-links" style="margin-bottom: 2rem;">
+        {% for cat in data.categories %}
+        <a href="/category/{{ cat.id }}" class="quick-btn" data-key="categories.{{ loop.index0 }}.name">{{ cat.name.en
+            }}</a>
+        {% endfor %}
+    </div>
+
     <div class="product-grid">
         {% if category.subcategories %}
         {% for sub in category.subcategories %}

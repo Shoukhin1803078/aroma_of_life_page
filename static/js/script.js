@@ -698,3 +698,51 @@ function renderProductCard(item) {
 }
 
 
+
+/* =========================================
+   Scroll Animations
+   ========================================= */
+
+// Scroll Animations
+document.addEventListener('DOMContentLoaded', () => {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+
+    const handleIntersect = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (entry.target.classList.contains('hidden-left')) {
+                    entry.target.classList.add('animate-slide-left');
+                } else if (entry.target.classList.contains('hidden-right')) {
+                    entry.target.classList.add('animate-slide-right');
+                } else if (entry.target.classList.contains('hidden-zoom')) {
+                    entry.target.classList.add('animate-zoom');
+                } else if (entry.target.classList.contains('hidden-slide-big')) {
+                    entry.target.classList.add('animate-slide-up-big');
+                } else {
+                    entry.target.classList.add('animate-fade-up');
+                }
+                entry.target.classList.remove('hidden-on-scroll', 'hidden-left', 'hidden-right', 'hidden-zoom', 'hidden-slide-big');
+                observer.unobserve(entry.target);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const hiddenElements = document.querySelectorAll('.hidden-on-scroll, .hidden-left, .hidden-right, .hidden-zoom, .hidden-slide-big');
+
+    hiddenElements.forEach((el) => observer.observe(el));
+
+    // Safety fallback: reveal all elements after 1 second if animation didn't trigger
+    setTimeout(() => {
+        hiddenElements.forEach(el => {
+            if (getComputedStyle(el).opacity === '0') {
+                el.classList.add('animate-fade-up');
+                el.classList.remove('hidden-on-scroll', 'hidden-left', 'hidden-right', 'hidden-zoom', 'hidden-slide-big');
+            }
+        });
+    }, 1000);
+});

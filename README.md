@@ -44,7 +44,7 @@ A bilingual (English/Bangla) e-commerce application for Grocery and Home Service
 
 5. **Run the server**
    ```bash
-   uvicorn app.main:app --reload
+   uvicorn app:app --reload
    ```
 
 6. **Open in browser**
@@ -294,8 +294,7 @@ When a customer places an order, an email is sent with:
 
 ```
 Antigravity_Check/
-├── app/
-│   └── main.py           # FastAPI backend
+├── app.py                # FastAPI backend
 ├── static/
 │   ├── css/
 │   │   └── style.css     # Styles
